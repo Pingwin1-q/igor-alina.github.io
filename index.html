@@ -124,30 +124,40 @@
         /* ===== CALENDAR (FIXED) ===== */
         .calendar-wrapper {
             display: inline-block;
-            padding: 40px;
+            padding: 20px;
             border: 1px solid var(--accent-gold);
             background: rgba(255, 255, 255, 0.03);
         }
 
         .month-name {
             font-family: 'Cinzel', serif;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             letter-spacing: 3px;
             color: var(--accent-gold-light);
+            font-size: 1.1rem;
         }
 
         .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(7, 40px);
-            gap: 10px;
+            grid-template-columns: repeat(7, 30px);
+            gap: 5px;
             text-align: center;
         }
 
-        .day-name { font-size: 0.8rem; color: var(--accent-gold); font-weight: bold; }
+        .day-name { 
+            font-size: 0.7rem; 
+            color: var(--accent-gold); 
+            font-weight: bold;
+            font-size: 0.6rem;
+        }
         
         .calendar-grid span { 
-            display: flex; align-items: center; justify-content: center; 
-            height: 40px; font-family: 'Cinzel';
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 30px; 
+            font-family: 'Cinzel';
+            font-size: 0.8rem;
         }
 
         .active-day {
@@ -309,6 +319,35 @@
             .info-box {
                 padding-left: 15px;
             }
+            .calendar-wrapper {
+                padding: 15px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .calendar-grid {
+                grid-template-columns: repeat(7, 40px);
+                gap: 6px;
+            }
+            .day-name {
+                font-size: 0.7rem;
+            }
+            .calendar-grid span {
+                height: 40px;
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .calendar-grid {
+                grid-template-columns: repeat(7, 30px);
+                gap: 4px;
+            }
+            .calendar-grid span {
+                height: 30px;
+                font-size: 0.8rem;
+            }
+            .day-name {
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
@@ -351,12 +390,12 @@
 
         <!-- Timeline -->
         <section class="timeline content-width">
-            <h2 class="section-title" data-aos> <span class="script-gold"></span></h2>
+            <h2 class="section-title" data-aos><span class="script-gold"></span></h2>
             <div class="timeline-items">
                 <div class="t-item" data-aos>
                     <span class="t-time">19:00</span>
                     <h4>СБОР ГОСТЕЙ</h4>
-                    <p>Ночной клуб Provokcator</p>
+                    <p>Ночной клуб Provokcator, welcome-зона, легкие закуски и предвкушение праздника.</p>
                 </div>
                 <div class="t-item" data-aos>
                     <span class="t-time">19:30</span>
@@ -398,7 +437,7 @@
             <div class="content-width">
                 <div class="rsvp-container" data-aos>
                     <div id="rsvp-content">
-                        <h2 class="section-title">RSVP</h2>
+                        <h2 class="section-title">ПРИГЛАШЕНИЕ</h2>
                         <p>Просим подтвердить ваше присутствие до 20 января 2026 года</p>
                         
                         <form class="rsvp-form" id="wedding-form" action="https://formspree.io/f/mrebypkv" method="POST">
