@@ -213,7 +213,19 @@
             gap: 60px;
         }
 
-        .swatch-group { display: flex; gap: 15px; margin-top: 20px; }
+        .details-grid > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .details-grid > div h2 {
+            text-align: center;
+            width: 100%;
+        }
+
+        .swatch-group { display: flex; gap: 15px; margin-top: 20px; justify-content: center; }
         
         .swatch {
             width: 60px; height: 60px;
@@ -273,10 +285,30 @@
         [data-aos].active { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .details-grid { grid-template-columns: 1fr; }
+            .details-grid { 
+                grid-template-columns: 1fr; 
+                gap: 60px;
+            }
+            .details-grid > div {
+                align-items: center;
+                text-align: center;
+            }
+            .details-grid > div h2 {
+                text-align: center;
+            }
+            .swatch-group {
+                justify-content: center;
+            }
             .names { font-size: 3rem; }
             .content-width { padding: 0 20px; }
-            .radio-group { flex-direction: column; gap: 15px; align-items: center; }
+            .radio-group { 
+                flex-direction: column; 
+                gap: 15px; 
+                align-items: center; 
+            }
+            .info-box {
+                padding-left: 15px;
+            }
         }
     </style>
 </head>
@@ -297,7 +329,7 @@
         <!-- Intro -->
         <section class="intro">
             <div class="content-width" data-aos>
-                <h2 class="script-font">Дорогие близкие!</h2>
+                <h2 class="script-font">Дорогие друзья!</h2>
                 <div class="text-block">
                     <p>В нашей истории начинается новая глава. Мы будем счастливы разделить самый важный момент создания нашей семьи с вами в этот волшебный зимний вечер.</p>
                 </div>
@@ -319,12 +351,12 @@
 
         <!-- Timeline -->
         <section class="timeline content-width">
-            <h2 class="section-title" data-aos>ПРОГРАММА <span class="script-gold">вечера</span></h2>
+            <h2 class="section-title" data-aos> <span class="script-gold"></span></h2>
             <div class="timeline-items">
                 <div class="t-item" data-aos>
                     <span class="t-time">19:00</span>
                     <h4>СБОР ГОСТЕЙ</h4>
-                    <p>Welcome-зона, легкие закуски и предвкушение праздника.</p>
+                    <p>Ночной клуб Provokcator</p>
                 </div>
                 <div class="t-item" data-aos>
                     <span class="t-time">19:30</span>
@@ -343,7 +375,7 @@
         <section class="details">
             <div class="content-width details-grid">
                 <div data-aos>
-                    <h2 class="section-title" style="color: var(--accent-gold); text-align: left;">DRESS CODE</h2>
+                    <h2 class="section-title" style="color: var(--accent-gold); text-align: center;">DRESS CODE</h2>
                     <p>Будем признательны, если при выборе наряда вы отдадите предпочтение цветам нашей свадьбы:</p>
                     <div class="swatch-group">
                         <div class="swatch" style="background: #000;" title="Черный"></div>
@@ -352,10 +384,10 @@
                     </div>
                 </div>
                 <div data-aos>
-                    <h2 class="section-title" style="color: var(--accent-gold); text-align: left;">WISHES</h2>
+                    <h2 class="section-title" style="color: var(--accent-gold); text-align: center;">WISHES</h2>
                     <p>Ваше присутствие — главный подарок для нас!</p>
                     <div class="info-box">
-                        <p><strong>Цветы:</strong> Пожалуйста, не дарите нам срезанные цветы. Мы не успеем насладиться их красотой до отъезда. Вместо этого мы будем рады бутылке вашего любимого вина для нашей будущей домашней коллекции.</p>
+                        <p><strong>Цветы:</strong> Пожалуйста, не дарите нам цветы. Вместо этого мы будем рады бутылке вашего любимого вина для нашей будущей домашней коллекции.</p>
                     </div>
                 </div>
             </div>
@@ -366,8 +398,8 @@
             <div class="content-width">
                 <div class="rsvp-container" data-aos>
                     <div id="rsvp-content">
-                        <h2 class="section-title">Приглашение</h2>
-                        <p>Просим подтвердить ваше присутствие до 1 февраля 2026 года</p>
+                        <h2 class="section-title">RSVP</h2>
+                        <p>Просим подтвердить ваше присутствие до 20 января 2026 года</p>
                         
                         <form class="rsvp-form" id="wedding-form" action="https://formspree.io/f/mrebypkv" method="POST">
                             <input type="text" name="name" placeholder="Ваше Имя и Фамилия" required>
@@ -384,7 +416,7 @@
                     <div id="rsvp-thank-you" style="display: none; padding: 40px 0;">
                         <h2 class="script-font" style="color: var(--burgundy); font-size: 3.5rem;">Благодарим!</h2>
                         <p style="font-size: 1.4rem; font-family: 'Cormorant Garamond'; color: var(--dark-brown);">
-                            Ваш ответ успешно отправлен.
+                            Ваш ответ успешно отправлен. <br> С нетерпением ждем встречи с вами!
                         </p>
                         <div style="width: 50px; height: 1px; background: var(--accent-gold); margin: 20px auto;"></div>
                     </div>
